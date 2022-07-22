@@ -33,10 +33,12 @@
         }
         if (typeof obj.attr === "object") {
             for (var i = 0; i < obj.attr.length; i++) {
-                attrKey = Object.keys(obj.attr[i]);
-                if (obj.attr[i][key[0]]) {
-                    newDom.setAttribute(attrKey[0], obj.attr[i][key[0]])
+                if(obj.attr[i]){
+                 attrKey = Object.keys(obj.attr[i]);
+                if (obj.attr[i][attrKey[0]]) {
+                    newDom.setAttribute(attrKey[0], obj.attr[i][attrKey[0]]);
                 }
+            }
             }
         }
         if (typeof obj.child === "object") {
