@@ -14,7 +14,7 @@
                 }
             }
         },
-        setChild: function (obj) {
+        addChild: function (obj) {
             if (obj) {
                 libObj.child.push(obj)
             }

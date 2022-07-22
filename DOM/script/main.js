@@ -34,7 +34,7 @@ var nav = createDomObj.create({
       },
     ],
   });
-  head.setChild(nav);
-  main.setChild(head);
+  head.addChild(nav);
+  main.addChild(head);
   var domm = createDomObj(main);
   document.body.append(domm);
