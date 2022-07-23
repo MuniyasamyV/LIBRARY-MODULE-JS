@@ -1,37 +1,36 @@
-var main = createDomObj.create({
-  type: "main",
-  attr: [
-    {
-      class: "main container",
-    },
-  ],
-});
-var head = createDomObj.create({
-  type: "header",
-  attr: [
-    {
-      class: "d-flex flex-column",
-    },
-  ],
-});
+var nav  ={
+  tag: "nav",
+  child : [ {
+    tag: "div",
+    attribute: [ {class:"flex justify-between mt-8 mb-4 pb-4 border-b" }],
+    child: [
+      {
+        tag: "div",
+        content: "Subscribe",
+        attribute: [{ class : "text-2xl"}]
+      }
+    ]
 
-var nav = createDomObj.create({
-  type: "nav",
+  }]
+}
 
-  attr: [
+var appBody = createDomObj.create({
+  tag: "div",
+  attribute: [
     {
-      type: "div",
-      attr: [{ class: "flex justify-between mt-8 mb-4 pb-4 border-b" }],
-      child: [
-        {
-          type: "div",
-          text: "Subscribe",
-        },
-      ],
+      class: "ml-8 mr-8",
     },
   ],
-});
-head.addChild(nav);
-main.addChild(head);
-var domm = createDomObj(main);
-document.body.append(domm);
+})
+
+
+appBody.addChild(nav)
+
+var app = createDomObj(appBody)
+
+console.log(app);
+
+
+
+
+
