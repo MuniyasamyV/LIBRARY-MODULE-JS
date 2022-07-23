@@ -28,7 +28,6 @@ appBody.addChild(nav)
 
 var app = createDomObj(appBody)
 
-console.log(app);
 
 
 

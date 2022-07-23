@@ -8,10 +8,7 @@
     child: [],
     addChild: function (obj) {
       if (obj) documentObj.child.push(obj);
-    },
-    getDocumentObj: function () {
-      return documentObj;
-    },
+    }
   };
 
   var createDomObj = function (obj) {
