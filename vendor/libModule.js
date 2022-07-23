@@ -23,8 +23,8 @@
       if (obj.attribute.length) {
         for (var i = 0; i < obj.attribute.length; i++) {
           if (obj.attribute[i]) {
+            console.log(obj.attribute[i]);
             key = Object.keys(obj.attribute[i]);
-
             createDomObj_Obj.setAttribute(key[0], obj.attribute[i][key[0]]);
           }
         }
