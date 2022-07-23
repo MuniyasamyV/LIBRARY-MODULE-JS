@@ -6,7 +6,7 @@
         attr: [],
         text: null,
         child: [],
-        setAttr: function (key, val) {
+        setAttribute: function (key, val) {
             for (var i = 0; i < libObj.attr.length; i++) {
                 attrKey = Object.keys(libObj.attr[i]);
                 if (attrKey[0] === key) {
@@ -25,26 +25,58 @@
         }
     }
     var createDomObj = function (obj) {
-        if (typeof obj.type === "string") {
-            var newDom = document.createElement(obj.type)
-        }
+        var newDom;
+        // console.log(typeof(obj.type))
+        // if (typeof obj.type === "object") {
+          newDom = document.createElement(obj.type)
+
+        // }
+        // console.log(typeof(obj.text))
         if (typeof obj.text === "string") {
+            console.log(typeof(obj.text))
             newDom.innerHTML = obj.text;
         }
-        if (typeof obj.attr === "object") {
-            for (var i = 0; i < obj.attr.length; i++) {
-                if(obj.attr[i]){
-                 attrKey = Object.keys(obj.attr[i]);
-                if (obj.attr[i][attrKey[0]]) {
-                    newDom.setAttribute(attrKey[0], obj.attr[i][attrKey[0]]);
+
+        // if (typeof obj.attr === "object") {
+        //     // console.log(3)
+        //     for (var i = 0; i < obj.attr.length; i++) {
+        //         // console.log(4)
+        //         // console.log(i)
+        //         // console.log(obj.attr.length)
+        //         if(obj.attr[i] ){
+        //             console.log(5)
+        //          attrKey = Object.keys(obj.attr[i]);
+        //         //  console.log(attrKey.length)
+        //         if (obj.attr[i][attrKey[0]]) {
+        //             // console.log(6)
+        //             newDom.setAttribute(attrKey[0], obj.attr[i][attrKey[0]]);
+        //         }
+        //     }
+        //     }
+        // }
+        if(typeof obj.attr === "object")
+        {
+            if(obj.attr.length > 0)
+            console.log(4)
+            console.log(5)
+            {
+                for(var i=0 ; i<obj.attr.length; i++)
+               
+                {
+                    newDom.setAttribute(
+                       
+                        obj.attr[i],obj.attr[i][Object.keys(obj.attr[i])]
+                    )
                 }
-            }
+                
+
             }
         }
+    
         if (typeof obj.child === "object") {
             for (var i = 0; i < obj.child.length; i++) {
-                if (createDom(obj.child[i])) {
-                    newDom.append(createDom(obj.child[i]));
+                if (createDomObj(obj.child[i])) {
+                    newDom.append(createDomObj(obj.child[i]));
                 }
             }
         }
