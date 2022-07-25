@@ -2,9 +2,9 @@
   root.createDomObj = factory();
 })(window, function () {
   var documentObj = {
-    tag: null,
+    type: null,
     attribute: [],
-    content: null,
+    text: null,
     child: [],
     addChild: function (obj) {
       if (obj) documentObj.child.push(obj);
@@ -13,11 +13,11 @@
 
   var createDomObj = function (obj) {
     var createDomObj_Obj;
-    if (obj.tag) {
-      var createDomObj_Obj = document.createElement(obj.tag);
+    if (obj.type) {
+      var createDomObj_Obj = document.createElement(obj.type);
     }
-    if (obj.content) {
-      createDomObj_Obj.innerHTML = obj.content;
+    if (obj.text) {
+      createDomObj_Obj.innerHTML = obj.text;
     }
     if (obj.attribute) {
       if (obj.attribute.length) {
@@ -40,13 +40,13 @@
   };
 
   createDomObj.create = function (obj) {
-    if (obj.tag) {
-      documentObj.tag = obj.tag;
-      console.log(documentObj.tag);
+    if (obj.type) {
+      documentObj.type = obj.type;
+      console.log(documentObj.type);
     }
-    if (obj.content) {
-      documentObj.content = obj.content;
-      console.log(documentObj.content);
+    if (obj.text) {
+      documentObj.text = obj.text;
+      console.log(documentObj.text);
     }
     if (obj.attribute) {
       documentObj.attribute = obj.attribute;

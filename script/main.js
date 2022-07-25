@@ -1,13 +1,13 @@
 var nav = {
-  tag: "nav",
+  type: "nav",
   child: [
     {
-      tag: "div",
+      type: "div",
       attribute: [{ class: "flex justify-between mt-8 mb-4 pb-4 border-b" }],
       child: [
         {
-          tag: "div",
-          content: "Subscribe",
+          type: "div",
+          text: "Subscribe",
           attribute: [{ class: "text-2xl" }, { id: "subscribe" }],
         },
       ],
@@ -16,7 +16,7 @@ var nav = {
 };
 
 var appBody = createDomObj.create({
-  tag: "div",
+  type: "div",
   attribute: [
     {
       class: "ml-8 mr-8",
