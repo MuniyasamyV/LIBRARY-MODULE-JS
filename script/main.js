@@ -63,6 +63,7 @@ var titleSection = {
 
 var mainBody = createDomObj.create({
   type: "div",
+<<<<<<< HEAD
   // text:"hihi",
   attribute: [
     {
@@ -77,3 +78,17 @@ mainBody.addChild(titleSection);
 var app = createDomObj(mainBody);
 console.log(app)
 document.body.appendChild(app)
+=======
+  attribute: [
+    {
+      class: "mx-60",
+    },
+  ],
+});
+
+mainBody.addChild(nav);
+mainBody.addChild(nav_2);
+mainBody.addChild(titleSection);
+
+var app = createDomObj(mainBody);
+>>>>>>> 7f1af0c94384644f78facbe448d762941a31a93b
